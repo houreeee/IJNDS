@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="r" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Houre Ahmed Motawea" />
+    <title>IJ-NDS Actualités</title>
+    <link rel="icon" href="intiative jeunesse NDS PFP.jpeg" />
+    <link rel="stylesheet" href="style2.css" />
+    <script src="script2.js" defer></script>
+  </head>
+  <body>
+    <nav id="main-nav">
+      <a
+        href="#"
+        class="nav-logo"
+        onclick="
+          showPage('events');
+          return false;
+        "
+        >IJ-NDS</a
+      >
+      <ul class="nav-links">
+        <li>
+          <a
+            href="#"
+            id="nav-news"
+            onclick="
+              showPage('news');
+              return false;
+            "
+            class="active"
+            >Actualités</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            id="nav-events"
+            onclick="
+              showPage('events');
+              return false;
+            "
+            >Événements</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            id="nav-gallery"
+            onclick="
+              showPage('gallery');
+              return false;">
+              Galerie</a>
+        </li>
+        <li>
+          <a href="https://forms.gle/TdqCGZ7cHiKkg6Hk6" class="nav-cta">
+            Rejoignez-nous</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="page active" id="page-news">
+      <div class="page-hero">
+        <div class="page-hero-inner">
+          <div class="pill"><span></span>Nouveautés</div>
+          <h1>Actualités <em>&amp; Publications</em></h1>
+          <p>
+            Restez informé des dernières nouvelles, annonces et initiatives
+            portées par IJ-NDS au sein de Notre Dame de Sion et de la communauté
+            d'Alexandrie.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner">
+          <div class="filter-bar fade-up d1">
+            <button
+              class="filter-pill active"
+              onclick="filterNews(this, 'all')"
+            >
+              Tout voir
+            </button>
+            <button
+              class="filter-pill"
+              onclick="filterNews(this, 'initiative')"
+            >
+              Initiatives
+            </button>
+            <button
+              class="filter-pill"
+              onclick="filterNews(this, 'solidarity')"
+            >
+              Solidarité
+            </button>
+            <button class="filter-pill" onclick="filterNews(this, 'school')">
+              École
+            </button>
+            <button class="filter-pill" onclick="filterNews(this, 'community')">
+              Communauté
+            </button>
+          </div>
+          <div class="news-featured-grid" id="news-featured">
+            <div class="card fade-up d2" data-cat="initiative">
+              <div class="card-thumb" style="font-size: 72px">🌿</div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Initiative</span>
+                <h3>
+                  Lancement de notre nouveau programme de mentorat scolaire 2026
+                </h3>
+                <p>
+                  IJ-NDS lance un programme d'accompagnement destiné aux élèves
+                  de Seconde et de Première, visant à renforcer la cohésion et
+                  l'entraide au sein du lycée Notre Dame de Sion.
+                </p>
+                <div class="card-meta">
+                  <span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    12 mars 2026
+                  </span>
+                  <span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                    Équipe IJ-NDS
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d3" data-cat="solidarity">
+              <div class="card-thumb" style="font-size: 56px">🤝</div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Solidarité</span>
+                <h3>
+                  Collecte de fournitures scolaires pour les familles
+                  d'Alexandrie
+                </h3>
+                <p>
+                  Plus de 200 familles bénéficient de notre dernière campagne de
+                  solidarité organisée en partenariat avec les associations
+                  locales.
+                </p>
+                <div class="card-meta">
+                  <span>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    5 mars 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-secondary-grid" id="news-grid">
+            <div class="card fade-up d2" data-cat="school">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                📚
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">École</span>
+                <h3>Atelier écriture créative — retour en images</h3>
+                <p>
+                  L'atelier animé par nos membres a réuni 35 élèves autour de la
+                  langue et de l'expression littéraire.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >28 fév 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d3" data-cat="community">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                🏙️
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Communauté</span>
+                <h3>Partenariat avec la Maison de Quartier Ibrahimieh</h3>
+                <p>
+                  Un accord de collaboration signé pour des actions communes
+                  tout au long de l'année 2026.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >20 fév 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d4" data-cat="initiative">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                🌱
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Initiative</span>
+                <h3>Jardin pédagogique : première plantation collective</h3>
+                <p>
+                  Retour sur la journée de plantation organisée dans la cour du
+                  lycée par le pôle Environnement.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >14 fév 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d2" data-cat="solidarity">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                🎒
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Solidarité</span>
+                <h3>Distribution de kits d'hygiène — Ramadan 2026</h3>
+                <p>
+                  En préparation du mois sacré, IJ-NDS mobilise ses bénévoles
+                  pour la distribution de 300 kits.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >8 fév 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d3" data-cat="school">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                🎤
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">École</span>
+                <h3>Débat inter-classes : «Jeunesse &amp; Engagement»</h3>
+                <p>
+                  Six classes ont participé à notre premier tournoi de débat
+                  organisé dans l'amphithéâtre du lycée.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >1 fév 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="card fade-up d4" data-cat="community">
+              <div
+                class="card-thumb"
+                style="min-height: 160px; font-size: 44px"
+              >
+                🤲
+              </div>
+              <div class="card-body">
+                <span class="card-tag tag-news">Communauté</span>
+                <h3>Visite à la maison de retraite Sainte-Catherine</h3>
+                <p>
+                  Nos membres ont passé une après-midi avec les résidents,
+                  apportant joie et présence chaleureuse.
+                </p>
+                <div class="card-meta">
+                  <span
+                    ><svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" />
+                      <line x1="3" y1="10" x2="21" y2="10" /></svg
+                    >25 jan 2026</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="news-load-more">
+            <button class="btn-outline" onclick="loadMoreNews()">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+              Voir plus d'articles
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-events">
+      <div class="page-hero">
+        <div class="page-hero-inner">
+          <div class="pill"><span></span>Agenda</div>
+          <h1>Nos <em>Événements</em></h1>
+          <p>
+            Découvrez tous les événements à venir organisés par IJ-NDS —
+            ateliers, conférences, journées solidaires et rencontres
+            communautaires.
+          </p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner">
+          <div class="events-layout">
+            <div>
+              <div class="section-head">
+                <div class="eyebrow">À venir</div>
+                <h2>Prochains événements</h2>
+                <p>
+                  Inscrivez-vous et participez à nos actions tout au long de
+                  l'année.
+                </p>
+                <br /><br />
+                <h2>Attendez nos prochains événements....</h2>
+                <p>
+                  Retrouvez nos actualités et événements en exclusivité sur
+                  Instagram!!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page" id="page-gallery">
+      <div class="page-hero">
+        <div class="page-hero-inner">
+          <div class="pill"><span></span>Photos & Moments</div>
+          <h1>Notre <em>Galerie</em></h1>
+          <p>Retrouvez les meilleurs souvenirs de nos événements...</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="inner">
+          <div class="gallery-tabs fade-up d1">
+            <button
+              class="gallery-tab active"
+              onclick="filterGallery(this, 'all')"
+            >
+              Tout <span class="count">18</span>
+            </button>
+          </div>
+          <div class="gallery-masonry" id="gallery-masonry"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="#"
+              class="nav-logo"
+              onclick="
+                showPage('news');
+                return false;
+              "
+              >IJ-NDS</a
+            >
+            <p>
+              Un mouvement d'élèves engagé à promouvoir la solidarité,
+              l'initiative et l'engagement concret au sein de Notre Dame de Sion
+              et de la communauté d'Alexandrie.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h5>IJ-NDS</h5>
+            <ul>
+              <li><a href="index.html" target="_blank">À propos de nous</a></li>
+              <li><a href="#index.html" target="_blank">Notre Équipe</a></li>
+              <li><a href="#index.html">Programme</a></li>
+              <li>
+                <a
+                  href="#index.html"
+                  target="_blank"
+                  onclick="
+                    showPage('events');
+                    return false;
+                  "
+                  >Rejoignez-nous</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Ressources</h5>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    showPage('news');
+                    return false;
+                  "
+                  >Actualités</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    showPage('events');
+                    return false;
+                  "
+                  >Événements</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  onclick="
+                    showPage('gallery');
+                    return false;
+                  "
+                  >Galerie</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul>
+              <li>
+                <a href="mailto:initiative.jeunesse@ndsalex.org"
+                  >initiative.jeunesse@ndsalex.org</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/initiative.jeunesse.nds?igsh=MXE1NGcwMHpoZjU5Mw=="
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 IJ-NDS Initiative. Tous droits réservés.</p>
+          <div class="footer-social">
+            <a href="mailto:initiative.jeunesse@ndsalex.org">📧</a>
+            <a
+              href="https://www.instagram.com/initiative.jeunesse.nds?igsh=MXE1NGcwMHpoZjU5Mw=="
+              >ig</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+      <button class="lightbox-close" onclick="closeLightboxBtn()">✕</button>
+      <button
+        class="lightbox-prev"
+        onclick="
+          lightboxNav(-1);
+          event.stopPropagation();
+        "
+      >
+        ‹
+      </button>
+      <button
+        class="lightbox-next"
+        onclick="
+          lightboxNav(1);
+          event.stopPropagation();
+        "
+      >
+        ›
+      </button>
+      <div class="lightbox-placeholder" id="lightbox-img"></div>
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title"></h4>
+        <span id="lightbox-date"></span>
+      </div>
+    </div>
+  </body>
+</html>
